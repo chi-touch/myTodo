@@ -1,26 +1,30 @@
-package africa.semicolon.dto.request;
+package africa.semicolon.data.model;
 
-import africa.semicolon.data.model.Tasks;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+@Document
 @Data
-public class CreateTaskRequest {
-
+public class Todo {
+    @Id
+    private String id;
     private String title;
     private String body;
     private String author;
-    List<Tasks> taskList = new ArrayList<>();
     private String localDate = createdAt();
 
     private String createdAt() {
-        LocalDateTime datedTime = LocalDateTime.now();
+        LocalDateTime date = LocalDateTime.now();
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm:ss");
-        return datedTime.format(dateTimeFormatter);
+        return date.format(dateTimeFormatter);
     }
+
+    List<Tasks> taskList = new ArrayList<>();
 }

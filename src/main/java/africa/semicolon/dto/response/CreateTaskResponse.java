@@ -7,4 +7,5 @@ import lombok.Setter;
 @Setter
 public class CreateTaskResponse {
     private String message;
+    private String author;
 }

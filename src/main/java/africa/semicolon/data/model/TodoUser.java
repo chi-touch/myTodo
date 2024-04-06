@@ -18,6 +18,6 @@ public class TodoUser {
     private String userName;
     private boolean isLocked;
     @DBRef
-    private List<Task> tasks = new ArrayList<>();
+    private List<Tasks> tasks = new ArrayList<>();
 
 }
