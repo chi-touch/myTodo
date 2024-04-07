@@ -4,35 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0172465-7c53-4c49-8648-35fd6bedb13e" name="Changes" comment="to do">
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/TodoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/TodoUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/model/Tasks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/model/Todo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repository/TasksRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repository/TodoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/request/DeleteRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/exceptions/AuthorDoesNotExist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/exceptions/InvalidInputEnteredException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/exceptions/InvalidTitleException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/exceptions/TitleAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/exceptions/UserNameAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/util/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/africa/semicolon/service/TodoServiceImplTest.java" afterDir="false" />
+    <list default="true" id="e0172465-7c53-4c49-8648-35fd6bedb13e" name="Changes" comment="to do touch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/model/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/model/TodoUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/model/TodoUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repository/TodoUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/request/CreateTaskRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/request/CreateTaskRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/request/UserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/request/RegisterUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/response/CreateTaskResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/response/CreateTaskResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/response/RegisterUserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/africa/semicolon/service/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/africa/semicolon/service/TodoUserServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/TodoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/TodoUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repository/TodoUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repository/TodoUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/africa/semicolon/service/TodoUserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/africa/semicolon/service/TodoUserServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +49,7 @@
     "JUnit.TodoUserServiceImplTest.executor": "Run",
     "JUnit.TodoUserServiceImplTest.testToCreateTask.executor": "Run",
     "JUnit.TodoUserServiceImplTest.testToDeleteAll.executor": "Run",
+    "JUnit.TodoUserServiceImplTest.testToFindUser.executor": "Run",
     "JUnit.TodoUserServiceImplTest.testToLogin.executor": "Run",
     "JUnit.TodoUserServiceImplTest.testToRegisterUser.executor": "Run",
     "JUnit.UserServiceImplTest.executor": "Run",
@@ -112,7 +92,7 @@
       <recent name="africa.semicolon.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="JUnit.TodoServiceImplTest.testToDeleteAll">
     <configuration name="TodoServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myTodo" />
       <extension name="coverage">
@@ -124,6 +104,22 @@
       <option name="PACKAGE_NAME" value="africa.semicolon.service" />
       <option name="MAIN_CLASS_NAME" value="africa.semicolon.service.TodoServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoServiceImplTest.testToDeleteAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myTodo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="africa.semicolon.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="africa.semicolon.service" />
+      <option name="MAIN_CLASS_NAME" value="africa.semicolon.service.TodoServiceImplTest" />
+      <option name="METHOD_NAME" value="testToDeleteAll" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,7 +139,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TodoUserServiceImplTest.testToLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TodoUserServiceImplTest.testToDeleteAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myTodo" />
       <extension name="coverage">
         <pattern>
@@ -153,23 +149,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="africa.semicolon.service" />
       <option name="MAIN_CLASS_NAME" value="africa.semicolon.service.TodoUserServiceImplTest" />
-      <option name="METHOD_NAME" value="testToLogin" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TodoUserServiceImplTest.testToRegisterUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myTodo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="africa.semicolon.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="africa.semicolon.service" />
-      <option name="MAIN_CLASS_NAME" value="africa.semicolon.service.TodoUserServiceImplTest" />
-      <option name="METHOD_NAME" value="testToRegisterUser" />
+      <option name="METHOD_NAME" value="testToDeleteAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -190,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TodoServiceImplTest.testToDeleteAll" />
+        <item itemvalue="JUnit.TodoUserServiceImplTest.testToDeleteAll" />
         <item itemvalue="Spring Boot.Main" />
-        <item itemvalue="JUnit.TodoUserServiceImplTest" />
-        <item itemvalue="JUnit.TodoUserServiceImplTest.testToRegisterUser" />
         <item itemvalue="JUnit.TodoServiceImplTest" />
-        <item itemvalue="JUnit.TodoUserServiceImplTest.testToLogin" />
+        <item itemvalue="JUnit.TodoUserServiceImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +187,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712187918612</updated>
       <workItem from="1712187920160" duration="22043000" />
-      <workItem from="1712239596888" duration="39065000" />
+      <workItem from="1712239596888" duration="54390000" />
     </task>
     <task id="LOCAL-00001" summary="to do">
       <option name="closed" value="true" />
@@ -217,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712236015468</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="to do touch">
+      <option name="closed" value="true" />
+      <created>1712381892265</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712381892266</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +213,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="to do" />
-    <option name="LAST_COMMIT_MESSAGE" value="to do" />
+    <MESSAGE value="to do touch" />
+    <option name="LAST_COMMIT_MESSAGE" value="to do touch" />
   </component>
 </project>

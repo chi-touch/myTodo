@@ -4,6 +4,7 @@ import africa.semicolon.data.model.Tasks;
 import africa.semicolon.data.model.Todo;
 import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.response.CreateTaskResponse;
+import lombok.var;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

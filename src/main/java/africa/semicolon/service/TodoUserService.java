@@ -6,10 +6,12 @@ import africa.semicolon.dto.request.RegisterUserRequest;
 import africa.semicolon.dto.response.LoginResponse;
 import africa.semicolon.dto.response.RegisterUserResponse;
 
+import java.util.List;
+
 public interface TodoUserService {
     RegisterUserResponse register(RegisterUserRequest registerUserRequest);
 
-    TodoUser findByUserName(String username);
+   TodoUser findByUserName(String username);
 
     long count();
 

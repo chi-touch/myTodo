@@ -39,8 +39,9 @@ public class TodoUserServiceImpl implements TodoUserService {
 
 
     @Override
-    public TodoUser findByUserName(String username) {
-        return todoUserRepository.findByUserName(username);
+    public TodoUser findByUserName(String userName) {
+       return todoUserRepository.findByUserName(userName);
+//        return todoUserRepository.searchByUserName(userName);
     }
 
     @Override
