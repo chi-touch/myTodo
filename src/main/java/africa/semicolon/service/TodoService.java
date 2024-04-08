@@ -13,6 +13,9 @@ public interface TodoService {
      Todo findByAuthor(String author);
      void deleteAll();
 
+     void update(String title, String description);
+
+
 
 
 }

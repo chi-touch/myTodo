@@ -11,4 +11,6 @@ public interface TodoUserRepository extends MongoRepository<TodoUser, String> {
     TodoUser findByUserName(String userName);
 
     List<TodoUser> searchByUserName(String userName);
+
+    boolean existsByUserName(String username);
 }

@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static africa.semicolon.util.Mapper.map;
+import static africa.semicolon.util.Mapper.registerResponseMap;
+
 @Service
 public class TodoUserServiceImpl implements TodoUserService {
     @Autowired
@@ -21,20 +24,21 @@ public class TodoUserServiceImpl implements TodoUserService {
 
     @Override
     public RegisterUserResponse register(RegisterUserRequest registerUserRequest) {
-        if (ifUserNameAlreadyExist(registerUserRequest.getUserName())){
-            throw new UserNameAlreadyExistException(" this username already exist");
-        }
-        TodoUser todoUser = Mapper.map(registerUserRequest);
-        todoUserRepository.save(todoUser);
-
+        validate(registerUserRequest.getUserName());
+        TodoUser todoUser = map(registerUserRequest);
+        TodoUser savedUser = todoUserRepository.save(todoUser);
         RegisterUserResponse userResponse = new RegisterUserResponse();
-        userResponse.setMessage("Registration successful");
-        return userResponse;
+        return registerResponseMap(savedUser);
 
     }
 
-    private boolean ifUserNameAlreadyExist(String username){
-        return todoUserRepository.findByUserName(username) != null;
+
+
+    private void validate(String username){
+        boolean userExist = todoUserRepository.existsByUserName(username);
+        if(userExist)throw new UserNameAlreadyExistException(String.format("%s already exists",username));
+
+
     }
 
 

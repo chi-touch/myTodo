@@ -4,6 +4,7 @@ import africa.semicolon.data.model.Tasks;
 import africa.semicolon.data.model.Todo;
 import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.response.CreateTaskResponse;
+import africa.semicolon.exceptions.InvalidTitleException;
 import lombok.var;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -97,6 +98,11 @@ public class TodoServiceImplTest {
         todoService.deleteAll();
         assertThat(todoService.getNumberOfTask(), is(0L));
     }
+
+//    @Test
+//    public void testToThrowException(){
+//        assertThrows(InvalidTitleException.class,()-> todoService.)
+//    }
 
 
 

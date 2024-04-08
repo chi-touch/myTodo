@@ -69,5 +69,10 @@ public class TodoServiceImpl implements TodoService {
 
     }
 
+    @Override
+    public void update(String title, String description) {
+
+    }
+
     private boolean ifTitleAlreadyExist(String title){return todoRepository.findByAuthor(title) != null; }
 }

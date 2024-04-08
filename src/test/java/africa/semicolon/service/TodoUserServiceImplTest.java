@@ -19,7 +19,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class TodoUserServiceImplTest {
 
-//   RegisterUserRequest registerUserRequest;
+
+private  RegisterUserRequest registerUserRequest;
 //    LoginRequest loginRequest;
 
     @Autowired
@@ -27,18 +28,22 @@ public class TodoUserServiceImplTest {
 
     @BeforeEach
     public void setUp(){
-
-//        registerUserRequest = new RegisterUserRequest();
         userService.deleteAll();
+       registerUserRequest = new RegisterUserRequest();
+       registerUserRequest.setFirstName("chi");
+       registerUserRequest.setLastName("dav");
+       registerUserRequest.setUserName("chichi");
+       registerUserRequest.setPassword("1234");
+
+
 
         //loginRequest = new LoginRequest();
-
     }
 
     @Test
     public void testToRegisterUser(){
 
-        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest = new RegisterUserRequest();
         registerUserRequest.setUserName("chichi");
         registerUserRequest.setFirstName("chi");
         registerUserRequest.setLastName("dav");
@@ -56,7 +61,7 @@ public class TodoUserServiceImplTest {
     @Test
     //@Order(1)
     public void testToLogin(){
-        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest = new RegisterUserRequest();
         registerUserRequest.setUserName("chichiu");
         registerUserRequest.setFirstName("chio");
         registerUserRequest.setLastName("davi");
@@ -80,7 +85,7 @@ public class TodoUserServiceImplTest {
 
     @Test
     public void testToFindUser(){
-        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest = new RegisterUserRequest();
         registerUserRequest.setUserName("chih");
         registerUserRequest.setFirstName("chiom");
         registerUserRequest.setLastName("daviv");
@@ -93,7 +98,7 @@ public class TodoUserServiceImplTest {
     @Test
     public void testToDeleteAll(){
 
-        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest = new RegisterUserRequest();
         registerUserRequest.setUserName("chichi");
         registerUserRequest.setFirstName("chi");
         registerUserRequest.setLastName("dav");
@@ -109,6 +114,11 @@ public class TodoUserServiceImplTest {
         userService.deleteAll();
         assertThat(userService.getNumberOfUser());
         System.out.println(userService.getNumberOfUser());
+    }
+
+    @Test
+    public void testToLoginWithWrongPassword(){
+
     }
 
 }
