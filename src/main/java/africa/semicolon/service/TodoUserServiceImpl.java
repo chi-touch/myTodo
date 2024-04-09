@@ -1,12 +1,18 @@
 package africa.semicolon.service;
 
+import africa.semicolon.data.model.Todo;
 import africa.semicolon.data.model.TodoUser;
+import africa.semicolon.data.repository.TodoRepository;
 import africa.semicolon.data.repository.TodoUserRepository;
+import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.request.LoginRequest;
 import africa.semicolon.dto.request.RegisterUserRequest;
+import africa.semicolon.dto.response.CreateTaskResponse;
 import africa.semicolon.dto.response.LoginResponse;
 import africa.semicolon.dto.response.RegisterUserResponse;
 import africa.semicolon.exceptions.InvalidInputEnteredException;
+import africa.semicolon.exceptions.InvalidUserNameException;
+import africa.semicolon.exceptions.TitleAlreadyExistException;
 import africa.semicolon.exceptions.UserNameAlreadyExistException;
 import africa.semicolon.util.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +28,12 @@ public class TodoUserServiceImpl implements TodoUserService {
     @Autowired
     private TodoUserRepository todoUserRepository;
 
+    @Autowired
+    private TodoRepository todoRepository;
+
     @Override
     public RegisterUserResponse register(RegisterUserRequest registerUserRequest) {
-        validate(registerUserRequest.getUserName());
+        validate(registerUserRequest.getUsername());
         TodoUser todoUser = map(registerUserRequest);
         TodoUser savedUser = todoUserRepository.save(todoUser);
         RegisterUserResponse userResponse = new RegisterUserResponse();
@@ -35,7 +44,7 @@ public class TodoUserServiceImpl implements TodoUserService {
 
 
     private void validate(String username){
-        boolean userExist = todoUserRepository.existsByUserName(username);
+       boolean userExist = todoUserRepository.existsByUsername(username);
         if(userExist)throw new UserNameAlreadyExistException(String.format("%s already exists",username));
 
 
@@ -43,9 +52,23 @@ public class TodoUserServiceImpl implements TodoUserService {
 
 
     @Override
-    public TodoUser findByUserName(String userName) {
-       return todoUserRepository.findByUserName(userName);
+    public TodoUser findByUserName(String username) {
+        TodoUser user = todoUserRepository.findByUsername(username);
+        if (user != null) {
+            return user;
+        }
+        throw new InvalidUserNameException("this user name does not exist");
+    }
+//        if (!ifUserExists(username)){
+//            throw new InvalidUserNameException("this username does not exist");
+//        }
+       //return todoUserRepository.findByUsername(username);
 //        return todoUserRepository.searchByUserName(userName);
+
+
+    private boolean ifUserExists(String username) {
+        return todoUserRepository.existsByUsername(username);
+
     }
 
     @Override
@@ -64,7 +87,7 @@ public class TodoUserServiceImpl implements TodoUserService {
 
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
-        TodoUser foundUser = todoUserRepository.findByUserName(loginRequest.getUsername());
+        TodoUser foundUser = todoUserRepository.findByUsername(loginRequest.getUsername());
 
         if (isValidUsernameAndPassword(username, password)) {
             foundUser.setLocked(false);
@@ -82,10 +105,28 @@ public class TodoUserServiceImpl implements TodoUserService {
         return todoUserRepository.count();
     }
 
+    @Override
+    public CreateTaskResponse create(CreateTaskRequest createTaskRequest) {
+        if (ifTitleAlreadyExist(createTaskRequest.getTitle())){
+            throw new TitleAlreadyExistException("this title already exist");
+        }
+        Todo todo = Mapper.mapper(createTaskRequest);
+        Todo savedTodo = todoRepository.save(todo);
+
+        CreateTaskResponse createTaskResponse = new CreateTaskResponse();
+        createTaskResponse.setAuthor(savedTodo.getAuthor());
+        createTaskResponse.setMessage("created successful");
+        return createTaskResponse;
+
+    }
+
+    private boolean ifTitleAlreadyExist(String title){return todoRepository.findByAuthor(title) != null; }
+
+
     private boolean isValidUsernameAndPassword(String username, String password) {
         List<TodoUser> userList = todoUserRepository.findAll();
         for (TodoUser user : userList) {
-            if (user.getUserName() !=null && user.getPassword() !=null) {
+            if (user.getUsername() !=null && user.getPassword() !=null) {
                 return true;
             }
         }

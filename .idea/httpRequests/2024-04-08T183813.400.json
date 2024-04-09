@@ -1,0 +1,6 @@
+{
+  "timestamp": "2024-04-08T17:38:12.978+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "path": "/api/v1/findUser"
+}

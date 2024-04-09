@@ -1,0 +1,13 @@
+{
+  "object": {
+    "id": "66150170ac773a775c21adce",
+    "firstName": "chip",
+    "lastName": "tip",
+    "password": "1111",
+    "username": "slippers",
+    "dateRegistered": "2024-04-09T09:50:56.411",
+    "tasks": [],
+    "locked": false
+  },
+  "success": true
+}

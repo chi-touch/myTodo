@@ -23,7 +23,7 @@ public class Mapper {
         TodoUser user = new TodoUser();
         user.setFirstName(registerUserRequest.getFirstName());
         user.setLastName(registerUserRequest.getLastName());
-        user.setUserName(registerUserRequest.getUserName());
+        user.setUsername(registerUserRequest.getUsername());
         user.setPassword(registerUserRequest.getPassword());
         user.setLocked(false);
         return user;
@@ -31,7 +31,7 @@ public class Mapper {
     public static RegisterUserResponse registerResponseMap(TodoUser user){
         RegisterUserResponse response = new RegisterUserResponse();
         response.setId(user.getId());
-        response.setUsername(user.getUserName());
+        response.setUsername(user.getUsername());
         response.setDateRegistered(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss a").format(user.getDateRegistered()));
         return response;
     }

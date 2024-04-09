@@ -1,0 +1,583 @@
+GET http://localhost:8080/api/v1/findByUserName/slippers
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T100147.200.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T095211.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Content-Type: application/json
+Content-Length: 94
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "chip",
+  "lastName": "tip",
+  "password": "1111",
+  "username": "slippers"
+}
+
+<> 2024-04-09T095056.201.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Content-Type: application/json
+Content-Length: 90
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "chip",
+  "lastName": "tip",
+  "password": "1111",
+  "username": "slip"
+}
+
+<> 2024-04-09T095039.400.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T094915.400.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T094758.400.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Content-Type: application/json
+Content-Length: 90
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "chip",
+  "lastName": "tip",
+  "password": "1111",
+  "username": "slip"
+}
+
+<> 2024-04-09T094656.201.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "",
+  "lastName": "",
+  "password": "",
+  "username": ""
+}
+
+<> 2024-04-09T094624.201.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T094226.400.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T093652.400.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T093529.500.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T092253.201.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T092210.201.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T092046.201.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T092040.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T092014.201.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T085305.500.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/tis
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T085252.404.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/tis
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T085206.404.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T085025.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser/variable%20value
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T082936.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser/variable%20value
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T082739.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser/variable%20value
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T082639.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser/variable%20value
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-09T082556.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser/tis
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T224054.404.json
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T223737.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T222235.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T215855.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "tis"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T215734.400.html
+
+###
+
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+Content-Length: 45
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "tis",
+  "password": "1234"
+}
+
+<> 2024-04-08T215023.200.json
+
+###
+
+POST http://localhost:8080/api/v1/register
+Content-Type: application/json
+Content-Length: 92
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": " chichi",
+  "lastName": "dav",
+  "password": "1234",
+  "username": "tis"
+}
+
+<> 2024-04-08T214753.201.json
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"userName": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T203426.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"userName": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T202958.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T202801.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T202610.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T202502.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T202325.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T201853.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"userName": "we"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T201519.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"userName": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T201416.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+}:
+"username" : "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T201026.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+}:
+"username" : "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T200933.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+}:
+"username" : "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T200855.400.html
+
+###
+
+GET http://127.0.0.1:8080/api/v1/findUser
+}:
+"userName": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T200356.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "we"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T195636.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T195513.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T195357.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+{:
+"username": "dee"
+}:
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T195204.400.html
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T184215.400.json
+
+###
+
+GET http://localhost:8080/api/v1/findUser
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-08T183813.400.json
+
+###
+

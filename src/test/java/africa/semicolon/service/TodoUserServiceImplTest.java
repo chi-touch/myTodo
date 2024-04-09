@@ -1,13 +1,9 @@
 package africa.semicolon.service;
 
-import africa.semicolon.data.model.TodoUser;
 import africa.semicolon.dto.request.LoginRequest;
 import africa.semicolon.dto.request.RegisterUserRequest;
 import africa.semicolon.dto.response.LoginResponse;
-import africa.semicolon.dto.response.RegisterUserResponse;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,7 +28,7 @@ private  RegisterUserRequest registerUserRequest;
        registerUserRequest = new RegisterUserRequest();
        registerUserRequest.setFirstName("chi");
        registerUserRequest.setLastName("dav");
-       registerUserRequest.setUserName("chichi");
+       registerUserRequest.setUsername("chichi");
        registerUserRequest.setPassword("1234");
 
 
@@ -44,7 +40,7 @@ private  RegisterUserRequest registerUserRequest;
     public void testToRegisterUser(){
 
         registerUserRequest = new RegisterUserRequest();
-        registerUserRequest.setUserName("chichi");
+        registerUserRequest.setUsername("chichi");
         registerUserRequest.setFirstName("chi");
         registerUserRequest.setLastName("dav");
         registerUserRequest.setPassword("1234");
@@ -62,7 +58,7 @@ private  RegisterUserRequest registerUserRequest;
     //@Order(1)
     public void testToLogin(){
         registerUserRequest = new RegisterUserRequest();
-        registerUserRequest.setUserName("chichiu");
+        registerUserRequest.setUsername("chichiu");
         registerUserRequest.setFirstName("chio");
         registerUserRequest.setLastName("davi");
         registerUserRequest.setPassword("1239");
@@ -86,12 +82,12 @@ private  RegisterUserRequest registerUserRequest;
     @Test
     public void testToFindUser(){
         registerUserRequest = new RegisterUserRequest();
-        registerUserRequest.setUserName("chih");
+        registerUserRequest.setUsername("chih");
         registerUserRequest.setFirstName("chiom");
         registerUserRequest.setLastName("daviv");
         registerUserRequest.setPassword("1232");
         userService.register(registerUserRequest);
-        assertEquals("chih",userService.findByUserName("chih").getUserName());
+        assertEquals("chih",userService.findByUserName("chih").getUsername());
 
     }
 
@@ -99,7 +95,7 @@ private  RegisterUserRequest registerUserRequest;
     public void testToDeleteAll(){
 
         registerUserRequest = new RegisterUserRequest();
-        registerUserRequest.setUserName("chichi");
+        registerUserRequest.setUsername("chichi");
         registerUserRequest.setFirstName("chi");
         registerUserRequest.setLastName("dav");
         registerUserRequest.setPassword("1234");
@@ -107,7 +103,7 @@ private  RegisterUserRequest registerUserRequest;
 
         RegisterUserRequest registerUserRequest1 = new RegisterUserRequest();
         registerUserRequest1.setPassword("2222");
-        registerUserRequest1.setUserName("amil");
+        registerUserRequest1.setUsername("amil");
         registerUserRequest1.setFirstName("ama");
         registerUserRequest1.setLastName("john");
         userService.register(registerUserRequest1);

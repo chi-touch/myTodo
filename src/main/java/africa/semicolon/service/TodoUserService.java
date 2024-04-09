@@ -1,8 +1,10 @@
 package africa.semicolon.service;
 
 import africa.semicolon.data.model.TodoUser;
+import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.request.LoginRequest;
 import africa.semicolon.dto.request.RegisterUserRequest;
+import africa.semicolon.dto.response.CreateTaskResponse;
 import africa.semicolon.dto.response.LoginResponse;
 import africa.semicolon.dto.response.RegisterUserResponse;
 
@@ -20,4 +22,10 @@ public interface TodoUserService {
 
 
     long getNumberOfUser();
+
+    CreateTaskResponse create(CreateTaskRequest createTaskRequest);
+    //TodoUser addTask(TodoTaskRequest taskRequest);
+
+
+
 }

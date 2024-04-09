@@ -4,6 +4,7 @@ import africa.semicolon.dto.request.LoginRequest;
 import africa.semicolon.dto.request.RegisterUserRequest;
 import africa.semicolon.dto.response.ApiResponse;
 import africa.semicolon.dto.response.RegisterUserResponse;
+import africa.semicolon.exceptions.InvalidUserNameException;
 import africa.semicolon.exceptions.UserNameAlreadyExistException;
 import africa.semicolon.service.TodoUserService;
 import lombok.var;
@@ -34,7 +35,7 @@ public class TodoUserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?>login(LoginRequest loginRequest){
+    public ResponseEntity<?>login(@RequestBody LoginRequest loginRequest){
         try {
             var result = userService.login(loginRequest);
             return new ResponseEntity<>(result,HttpStatus.OK);
@@ -48,10 +49,14 @@ public class TodoUserController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/findUser")
-    public ResponseEntity<?> findByUserName(@RequestParam String userName){
-            var result = userService.findByUserName(userName);
-            return new ResponseEntity<>(result,HttpStatus.OK);
+    @GetMapping("/findByUserName/{username}")
+    public ResponseEntity<?> findByUserName(@PathVariable String username){
+        try{
+            var result = userService.findByUserName(username);
+            return ResponseEntity.ok(new ApiResponse(true, result));
+        }catch (InvalidUserNameException e){
+            return new ResponseEntity<>(new ApiResponse(false,e.getMessage()), BAD_REQUEST);
+        }
     }
 
 
