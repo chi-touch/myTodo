@@ -1,12 +1,13 @@
 package africa.semicolon.service;
 
-import africa.semicolon.data.model.Todo;
+import africa.semicolon.data.model.TodoTask;
 import africa.semicolon.data.model.TodoUser;
 import africa.semicolon.data.repository.TodoRepository;
 import africa.semicolon.data.repository.TodoUserRepository;
 import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.request.LoginRequest;
 import africa.semicolon.dto.request.RegisterUserRequest;
+import africa.semicolon.dto.request.TodoTaskRequest;
 import africa.semicolon.dto.response.CreateTaskResponse;
 import africa.semicolon.dto.response.LoginResponse;
 import africa.semicolon.dto.response.RegisterUserResponse;
@@ -106,12 +107,12 @@ public class TodoUserServiceImpl implements TodoUserService {
     }
 
     @Override
-    public CreateTaskResponse create(CreateTaskRequest createTaskRequest) {
-        if (ifTitleAlreadyExist(createTaskRequest.getTitle())){
+    public CreateTaskResponse createTask(CreateTaskRequest createTaskRequest) {
+        if (ifTitleExistAlready(createTaskRequest.getTitle())){
             throw new TitleAlreadyExistException("this title already exist");
         }
-        Todo todo = Mapper.mapper(createTaskRequest);
-        Todo savedTodo = todoRepository.save(todo);
+        TodoTask todo = Mapper.mapper(createTaskRequest);
+        TodoTask savedTodo = todoRepository.save(todo);
 
         CreateTaskResponse createTaskResponse = new CreateTaskResponse();
         createTaskResponse.setAuthor(savedTodo.getAuthor());
@@ -120,7 +121,23 @@ public class TodoUserServiceImpl implements TodoUserService {
 
     }
 
-    private boolean ifTitleAlreadyExist(String title){return todoRepository.findByAuthor(title) != null; }
+    @Override
+    public TodoUser addTask(TodoTaskRequest taskRequest) {
+        return null;
+    }
+
+    @Override
+    public void deleteTask(String title) {
+
+    }
+
+    @Override
+    public long getNumberOfTasks() {
+        return todoUserRepository.count();
+    }
+
+
+    private boolean ifTitleExistAlready(String title){return todoRepository.findByAuthor(title) != null; }
 
 
     private boolean isValidUsernameAndPassword(String username, String password) {

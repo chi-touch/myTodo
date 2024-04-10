@@ -11,13 +11,16 @@ import java.util.List;
 
 @Document
 @Data
-public class Todo {
+public class TodoTask {
     @Id
     private String id;
     private String title;
     private String body;
     private String author;
     private String localDate = createdAt();
+    private Status status;
+    private TaskPriority priority;
+    private boolean isCompleted;
 
     private String createdAt() {
         LocalDateTime date = LocalDateTime.now();

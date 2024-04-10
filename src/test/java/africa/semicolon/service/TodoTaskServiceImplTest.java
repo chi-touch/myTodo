@@ -1,10 +1,11 @@
 package africa.semicolon.service;
 
+import africa.semicolon.data.model.Status;
+import africa.semicolon.data.model.TaskPriority;
 import africa.semicolon.data.model.Tasks;
-import africa.semicolon.data.model.Todo;
+import africa.semicolon.data.model.TodoTask;
 import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.response.CreateTaskResponse;
-import africa.semicolon.exceptions.InvalidTitleException;
 import lombok.var;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,12 +23,12 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 
-public class TodoServiceImplTest {
+public class TodoTaskServiceImplTest {
 
     CreateTaskRequest createTaskRequest;
 
     @Autowired
-    TodoService todoService;
+    TodoTaskService todoService;
 
     @BeforeEach
     public void setUp(){
@@ -43,6 +44,8 @@ public class TodoServiceImplTest {
         List<Tasks> taskList = new ArrayList<>();
         createTaskRequest.setTaskList(taskList);
         createTaskRequest.setLocalDate(String.valueOf(LocalDate.now()));
+        createTaskRequest.setPriority(TaskPriority.IMPORTANT);
+        createTaskRequest.setStatus(Status.COMPLETE);
 
         CreateTaskResponse createTaskResponse =  todoService.createTask(createTaskRequest);
 
@@ -56,6 +59,8 @@ public class TodoServiceImplTest {
         createTaskRequest.setBody("today's job");
         createTaskRequest.setTitle("how my day went");
         createTaskRequest.setAuthor("chichi");
+        createTaskRequest.setPriority(TaskPriority.IMPORTANT);
+        createTaskRequest.setStatus(Status.COMPLETE);
         List<Tasks> taskList = new ArrayList<>();
         createTaskRequest.setTaskList(taskList);
         createTaskRequest.setLocalDate(String.valueOf(LocalDate.now()));
@@ -77,7 +82,7 @@ public class TodoServiceImplTest {
 
 //        Todo expected = new Todo();
 //        expected.setAuthor("chichi");
-        Todo actual =todoService.findByAuthor(createTaskRequest.getAuthor());
+        TodoTask actual =todoService.findByAuthor(createTaskRequest.getAuthor());
         assertEquals(response.getAuthor(),actual.getAuthor());
     }
     @Test

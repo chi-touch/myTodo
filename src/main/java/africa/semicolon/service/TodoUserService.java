@@ -4,11 +4,10 @@ import africa.semicolon.data.model.TodoUser;
 import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.request.LoginRequest;
 import africa.semicolon.dto.request.RegisterUserRequest;
+import africa.semicolon.dto.request.TodoTaskRequest;
 import africa.semicolon.dto.response.CreateTaskResponse;
 import africa.semicolon.dto.response.LoginResponse;
 import africa.semicolon.dto.response.RegisterUserResponse;
-
-import java.util.List;
 
 public interface TodoUserService {
     RegisterUserResponse register(RegisterUserRequest registerUserRequest);
@@ -23,9 +22,14 @@ public interface TodoUserService {
 
     long getNumberOfUser();
 
-    CreateTaskResponse create(CreateTaskRequest createTaskRequest);
-    //TodoUser addTask(TodoTaskRequest taskRequest);
+    CreateTaskResponse createTask(CreateTaskRequest createTaskRequest);
 
 
+
+
+    void deleteTask(String title);
+
+
+    long getNumberOfTasks();
 
 }

@@ -1,10 +1,13 @@
 package africa.semicolon.controllers;
 
+import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.request.LoginRequest;
 import africa.semicolon.dto.request.RegisterUserRequest;
 import africa.semicolon.dto.response.ApiResponse;
 import africa.semicolon.dto.response.RegisterUserResponse;
+import africa.semicolon.exceptions.InvalidTitleException;
 import africa.semicolon.exceptions.InvalidUserNameException;
+import africa.semicolon.exceptions.TitleAlreadyExistException;
 import africa.semicolon.exceptions.UserNameAlreadyExistException;
 import africa.semicolon.service.TodoUserService;
 import lombok.var;
@@ -57,6 +60,16 @@ public class TodoUserController {
         }catch (InvalidUserNameException e){
             return new ResponseEntity<>(new ApiResponse(false,e.getMessage()), BAD_REQUEST);
         }
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<?> createTask(@RequestBody CreateTaskRequest createTaskRequest){
+        try {
+            var result = userService.createTask(createTaskRequest);
+            return new ResponseEntity<>(new ApiResponse(true, result), CREATED);
+        }catch (TitleAlreadyExistException | InvalidTitleException e){
+            return new ResponseEntity<>(new ApiResponse(false,e.getMessage()), BAD_REQUEST);
+            }
     }
 
 
