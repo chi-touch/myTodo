@@ -1,13 +1,11 @@
 package africa.semicolon.service;
 
+import africa.semicolon.data.model.TodoTask;
 import africa.semicolon.data.model.TodoUser;
-import africa.semicolon.dto.request.CreateTaskRequest;
-import africa.semicolon.dto.request.LoginRequest;
-import africa.semicolon.dto.request.RegisterUserRequest;
-import africa.semicolon.dto.request.TodoTaskRequest;
-import africa.semicolon.dto.response.CreateTaskResponse;
-import africa.semicolon.dto.response.LoginResponse;
-import africa.semicolon.dto.response.RegisterUserResponse;
+import africa.semicolon.dto.request.*;
+import africa.semicolon.dto.response.*;
+
+import java.util.List;
 
 public interface TodoUserService {
     RegisterUserResponse register(RegisterUserRequest registerUserRequest);
@@ -24,8 +22,11 @@ public interface TodoUserService {
 
     CreateTaskResponse createTask(CreateTaskRequest createTaskRequest);
 
-
-
+    CompleteTaskResponse completeTask(CreateTaskRequest createTaskRequest);
+    IncompleteTaskResponse incompleteTask(CreateTaskRequest incompleteTaskRequest);
+    UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest);
+    List<TodoTask> findCompletedTasks();
+    List<TodoTask> findInCompletedTasks();
 
     void deleteTask(String title);
 

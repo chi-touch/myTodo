@@ -27,6 +27,5 @@ public interface TodoTaskService {
      IncompleteTaskResponse incompleteTask(CreateTaskRequest incompleteTaskRequest);
 
 
-
-
+    long getNumberOfUpdatedTasks();
 }

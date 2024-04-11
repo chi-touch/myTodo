@@ -4,13 +4,8 @@ import africa.semicolon.data.model.TodoTask;
 import africa.semicolon.data.model.TodoUser;
 import africa.semicolon.data.repository.TodoRepository;
 import africa.semicolon.data.repository.TodoUserRepository;
-import africa.semicolon.dto.request.CreateTaskRequest;
-import africa.semicolon.dto.request.LoginRequest;
-import africa.semicolon.dto.request.RegisterUserRequest;
-import africa.semicolon.dto.request.TodoTaskRequest;
-import africa.semicolon.dto.response.CreateTaskResponse;
-import africa.semicolon.dto.response.LoginResponse;
-import africa.semicolon.dto.response.RegisterUserResponse;
+import africa.semicolon.dto.request.*;
+import africa.semicolon.dto.response.*;
 import africa.semicolon.exceptions.InvalidInputEnteredException;
 import africa.semicolon.exceptions.InvalidUserNameException;
 import africa.semicolon.exceptions.TitleAlreadyExistException;
@@ -20,9 +15,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import static africa.semicolon.data.model.Status.COMPLETE;
+import static africa.semicolon.data.model.Status.INCOMPLETE;
 import static africa.semicolon.util.Mapper.map;
 import static africa.semicolon.util.Mapper.registerResponseMap;
+import static javax.print.attribute.standard.JobState.COMPLETED;
 
 @Service
 public class TodoUserServiceImpl implements TodoUserService {
@@ -122,13 +121,58 @@ public class TodoUserServiceImpl implements TodoUserService {
     }
 
     @Override
-    public TodoUser addTask(TodoTaskRequest taskRequest) {
-        return null;
+    public CompleteTaskResponse completeTask(CreateTaskRequest createTaskRequest) {
+        TodoTask todo = Mapper.mapper(createTaskRequest);
+        TodoTask savedTodo = todoRepository.save(todo);
+
+        CompleteTaskResponse response = new CompleteTaskResponse();
+        response.setAuthor(savedTodo.getAuthor());
+        response.setMessage("Task completed successful");
+        return response;
+    }
+
+
+
+    @Override
+    public IncompleteTaskResponse incompleteTask(CreateTaskRequest createTaskRequest) {
+        TodoTask todo = Mapper.mapper(createTaskRequest);
+        TodoTask savedTodo = todoRepository.save(todo);
+
+        IncompleteTaskResponse response = new IncompleteTaskResponse();
+        response.setAuthor(savedTodo.getAuthor());
+        response.setMessage("incomplete task created");
+        return response;
+    }
+
+    @Override
+    public UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest) {
+        TodoTask todoTask = Mapper.updateMapper(updateTaskRequest);
+        TodoTask savedTodo = todoRepository.save(todoTask);
+
+        UpdateTaskResponse updateTaskResponse = new UpdateTaskResponse();
+        updateTaskResponse.setAuthor(savedTodo.getAuthor());
+        updateTaskResponse.setMessage("updated successful");
+        return updateTaskResponse;
+    }
+
+//    @Override
+//    public List<TodoTask> findCompletedTasks() {
+//        return todoUserRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == COMPLETED).collect(Collectors.toList());
+//    }
+
+    @Override
+    public List<TodoTask> findCompletedTasks() {
+        return todoRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == COMPLETE).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<TodoTask> findInCompletedTasks() {
+        return todoRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == INCOMPLETE).collect(Collectors.toList());
     }
 
     @Override
     public void deleteTask(String title) {
-
+        todoRepository.deleteByTitle(title);
     }
 
     @Override

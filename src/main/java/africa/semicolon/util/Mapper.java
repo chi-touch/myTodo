@@ -42,7 +42,6 @@ public class Mapper {
     public static TodoTask updateMapper(UpdateTaskRequest updateTaskRequest){
         TodoTask todoTask = new TodoTask();
         todoTask.setBody(updateTaskRequest.getBody());
-        todoTask.setTitle(updateTaskRequest.getTitle());
         todoTask.setTaskList(updateTaskRequest.getTaskList());
         todoTask.setAuthor(updateTaskRequest.getAuthor());
         todoTask.setLocalDate(updateTaskRequest.getLocalDate());
@@ -50,19 +49,18 @@ public class Mapper {
         todoTask.setStatus(updateTaskRequest.getStatus());
         return todoTask;
     }
+//    public static TodoTask completeMapper(CreateTaskRequest createTaskRequest){
+//        TodoTask todo = new TodoTask();
+//        todo.setBody(createTaskRequest.getBody());
+//        todo.setTitle(createTaskRequest.getTitle());
+//        todo.setTaskList(createTaskRequest.getTaskList());
+//        todo.setAuthor(createTaskRequest.getAuthor());
+//        todo.setLocalDate(createTaskRequest.getLocalDate());
+//        todo.setPriority(createTaskRequest.getPriority());
+//        todo.setStatus(createTaskRequest.getStatus());
+//        todo.setCompleted(true);
+//        return todo;
+//    }
 
-    public static TodoTask completeMapper(CreateTaskRequest createTaskRequest){
-        TodoTask todo = new TodoTask();
-        todo.setBody(createTaskRequest.getBody());
-        todo.setTitle(createTaskRequest.getTitle());
-        todo.setTaskList(createTaskRequest.getTaskList());
-        todo.setAuthor(createTaskRequest.getAuthor());
-        todo.setLocalDate(createTaskRequest.getLocalDate());
-        todo.setPriority(createTaskRequest.getPriority());
-        todo.setStatus(createTaskRequest.getStatus());
-        todo.setCompleted(true);
-        return todo;
-
-    }
 
 }

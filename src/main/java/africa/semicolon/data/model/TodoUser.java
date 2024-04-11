@@ -18,6 +18,8 @@ public class TodoUser {
     private String password;
     private String username;
     private boolean isLocked;
+    private TaskPriority priority;
+    private Status status;
     private LocalDateTime dateRegistered = LocalDateTime.now();
     @DBRef
     private List<Tasks> tasks = new ArrayList<>();
