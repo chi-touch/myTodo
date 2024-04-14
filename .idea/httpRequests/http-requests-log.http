@@ -1,3 +1,39 @@
+GET http://localhost:8080/api/v1/findByUserName/slippers
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-13T213640.200.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/slippers
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-13T213631.200.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/slipper
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-13T213558.400.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-13T213540.400.json
+
+###
+
 POST http://localhost:8080/api/v1/create
 Content-Type: application/json
 Content-Length: 118
@@ -556,54 +592,6 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-04-08T200855.400.html
-
-###
-
-GET http://127.0.0.1:8080/api/v1/findUser
-}:
-"userName": "dee"
-}:
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-08T200356.400.html
-
-###
-
-GET http://localhost:8080/api/v1/findUser
-{:
-"username": "we"
-}:
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-08T195636.400.html
-
-###
-
-GET http://localhost:8080/api/v1/findUser
-{:
-"username": "dee"
-}:
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-08T195513.400.html
-
-###
-
-GET http://localhost:8080/api/v1/findUser
-{:
-"username": "dee"
-}:
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-08T195357.400.html
 
 ###
 

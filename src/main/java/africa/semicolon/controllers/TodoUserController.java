@@ -4,7 +4,6 @@ import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.request.LoginRequest;
 import africa.semicolon.dto.request.RegisterUserRequest;
 import africa.semicolon.dto.response.ApiResponse;
-import africa.semicolon.dto.response.RegisterUserResponse;
 import africa.semicolon.exceptions.InvalidTitleException;
 import africa.semicolon.exceptions.InvalidUserNameException;
 import africa.semicolon.exceptions.TitleAlreadyExistException;

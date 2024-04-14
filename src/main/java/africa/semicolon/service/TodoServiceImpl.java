@@ -1,6 +1,5 @@
 package africa.semicolon.service;
 
-import africa.semicolon.data.model.Status;
 import africa.semicolon.data.model.TodoTask;
 import africa.semicolon.data.repository.TodoRepository;
 import africa.semicolon.dto.request.CreateTaskRequest;
@@ -13,17 +12,20 @@ import africa.semicolon.exceptions.AuthorDoesNotExist;
 import africa.semicolon.exceptions.InvalidTitleException;
 import africa.semicolon.exceptions.TitleAlreadyExistException;
 import africa.semicolon.util.Mapper;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 import static africa.semicolon.data.model.Status.COMPLETE;
 import static africa.semicolon.data.model.Status.INCOMPLETE;
 
 @Service
-public class TodoService implements TodoTaskService{
+@AllArgsConstructor
+public class TodoServiceImpl implements TodoTaskService{
 
     @Autowired
     TodoRepository todoRepository;
@@ -93,15 +95,16 @@ public class TodoService implements TodoTaskService{
 
     @Override
     public List<TodoTask> findCompletedTasks() {
-        return todoRepository.findByStatus(Status.COMPLETE);
+        return todoRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == INCOMPLETE).collect(Collectors.toList());
+       // return todoRepository.findByStatus(Status.COMPLETE);
     }
 
     @Override
     public List<TodoTask> findInCompletedTasks() {
-        return todoRepository.findByStatus(Status.INCOMPLETE);
-
-       // return todoRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == INCOMPLETE).collect(Collectors.toList());
+        return todoRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == INCOMPLETE).collect(Collectors.toList());
     }
+
+    //return todoRepository.findByStatus(Status.INCOMPLETE);
 
     @Override
     public CompleteTaskResponse completeTask(CreateTaskRequest createTaskRequest) {

@@ -21,7 +21,6 @@ import static africa.semicolon.data.model.Status.COMPLETE;
 import static africa.semicolon.data.model.Status.INCOMPLETE;
 import static africa.semicolon.util.Mapper.map;
 import static africa.semicolon.util.Mapper.registerResponseMap;
-import static javax.print.attribute.standard.JobState.COMPLETED;
 
 @Service
 public class TodoUserServiceImpl implements TodoUserService {
@@ -59,11 +58,6 @@ public class TodoUserServiceImpl implements TodoUserService {
         }
         throw new InvalidUserNameException("this user name does not exist");
     }
-//        if (!ifUserExists(username)){
-//            throw new InvalidUserNameException("this username does not exist");
-//        }
-       //return todoUserRepository.findByUsername(username);
-//        return todoUserRepository.searchByUserName(userName);
 
 
     private boolean ifUserExists(String username) {

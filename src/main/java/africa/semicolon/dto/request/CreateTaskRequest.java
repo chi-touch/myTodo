@@ -4,6 +4,7 @@ import africa.semicolon.data.model.Status;
 import africa.semicolon.data.model.TaskPriority;
 import africa.semicolon.data.model.Tasks;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalDateTime;

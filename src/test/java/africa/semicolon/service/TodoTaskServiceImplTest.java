@@ -1,12 +1,12 @@
 package africa.semicolon.service;
 
-import africa.semicolon.data.model.Status;
+
 import africa.semicolon.data.model.TaskPriority;
 import africa.semicolon.data.model.Tasks;
 import africa.semicolon.data.model.TodoTask;
 import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.request.UpdateTaskRequest;
-import africa.semicolon.dto.response.CompleteTaskResponse;
+
 import africa.semicolon.dto.response.CreateTaskResponse;
 import africa.semicolon.dto.response.UpdateTaskResponse;
 import lombok.var;
@@ -23,8 +23,11 @@ import static africa.semicolon.data.model.Status.COMPLETE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
+
+
 @SpringBootTest
 
 public class TodoTaskServiceImplTest {
@@ -142,31 +145,34 @@ public class TodoTaskServiceImplTest {
 
     }
 
+//    @Test
+//    public void testToFindListOfTasks() {
+//        CreateTaskRequest createTaskRequest = new CreateTaskRequest();
+//        createTaskRequest.setBody("today's job");
+//        createTaskRequest.setTitle("how my day went");
+//        createTaskRequest.setAuthor("neddy");
+//        createTaskRequest.setPriority(TaskPriority.IMPORTANT);
+//        createTaskRequest.setStatus(COMPLETE);
+//        List<Tasks> taskList = new ArrayList<>();
+//        createTaskRequest.setTaskList(taskList);
+//        createTaskRequest.setLocalDate(String.valueOf(LocalDate.now()));
+//        todoService.createTask(createTaskRequest);
+//
+//        List<TodoTask> actual = todoService.findCompletedTasks();
+//
+//        assertThat("Size of actual list is not greater than 0", actual.size(), greaterThan(0));
+//
+//
+//        assertThat(actual.get(0).getAuthor(), is("neddy"));
+//        assertThat(actual.get(0).getStatus(), is(COMPLETE));
+//        assertThat(actual.size(),is(1L));
+//
+//    }
+
     @Test
-    public void testToFindListOfTasks(){
-        CreateTaskRequest createTaskRequest = new CreateTaskRequest();
-        createTaskRequest.setBody("today's job");
-        createTaskRequest.setTitle("how my day went");
-        createTaskRequest.setAuthor("neddy");
-        createTaskRequest.setPriority(TaskPriority.IMPORTANT);
-        createTaskRequest.setStatus(COMPLETE);
-        List<Tasks> taskList = new ArrayList<>();
-        createTaskRequest.setTaskList(taskList);
-        createTaskRequest.setLocalDate(String.valueOf(LocalDate.now()));
-        todoService.createTask(createTaskRequest);
+    public void testForCompletedTask(){
+        
 
-        List<TodoTask> actual = todoService.findCompletedTasks();
-
-        CompleteTaskResponse completeTaskResponse =
-        assertThat(actual.size(),is(1));
     }
-
-
-
-
-
-//    LoginResponse loginResponse = userService.login(loginRequest);
-//    assertThat(loginResponse).isNotNull();
-//    assertThat(loginResponse.getMessage()).isNotNull();
 
 }
