@@ -18,7 +18,7 @@ public class TodoTask {
     private String body;
     private String author;
     private String localDate = createdAt();
-    private Status status;
+    private Status status = Status.INCOMPLETE;
     private TaskPriority priority;
     private boolean isCompleted;
 

@@ -21,9 +21,6 @@ public interface TodoUserService {
     long getNumberOfUser();
 
     CreateTaskResponse createTask(CreateTaskRequest createTaskRequest);
-
-    CompleteTaskResponse completeTask(CreateTaskRequest createTaskRequest);
-    IncompleteTaskResponse incompleteTask(CreateTaskRequest incompleteTaskRequest);
     UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest);
     List<TodoTask> findCompletedTasks();
     List<TodoTask> findInCompletedTasks();

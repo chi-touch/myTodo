@@ -3,6 +3,24 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
+<> 2024-04-16T190336.400.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/variable%20value
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-04-16T190316.400.json
+
+###
+
+GET http://localhost:8080/api/v1/findByUserName/slippers
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
 <> 2024-04-13T213640.200.json
 
 ###
@@ -568,30 +586,6 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-04-08T201026.400.html
-
-###
-
-GET http://localhost:8080/api/v1/findUser
-}:
-"username" : "dee"
-}:
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-08T200933.400.html
-
-###
-
-GET http://localhost:8080/api/v1/findUser
-}:
-"username" : "dee"
-}:
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-04-08T200855.400.html
 
 ###
 

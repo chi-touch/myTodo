@@ -3,11 +3,9 @@ package africa.semicolon.controllers;
 import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.request.LoginRequest;
 import africa.semicolon.dto.request.RegisterUserRequest;
+import africa.semicolon.dto.request.UpdateTaskRequest;
 import africa.semicolon.dto.response.ApiResponse;
-import africa.semicolon.exceptions.InvalidTitleException;
-import africa.semicolon.exceptions.InvalidUserNameException;
-import africa.semicolon.exceptions.TitleAlreadyExistException;
-import africa.semicolon.exceptions.UserNameAlreadyExistException;
+import africa.semicolon.exceptions.*;
 import africa.semicolon.service.TodoUserService;
 import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,36 +66,21 @@ public class TodoUserController {
             return new ResponseEntity<>(new ApiResponse(true, result), CREATED);
         }catch (TitleAlreadyExistException | InvalidTitleException e){
             return new ResponseEntity<>(new ApiResponse(false,e.getMessage()), BAD_REQUEST);
-            }
+        }
+    }
+
+    @PatchMapping("/update")
+    public ResponseEntity<?> update(@RequestBody UpdateTaskRequest updateTaskRequest){
+        try {
+            var updateResult = userService.update(updateTaskRequest);
+            return new ResponseEntity<>(new ApiResponse(true,updateResult),CREATED);
+        }catch (AuthorDoesNotExist e){
+            return new ResponseEntity<>(new ApiResponse(false, e.getMessage()),BAD_REQUEST);
+        }
     }
 
 
 
-
-//    @PostMapping("/register")
-//    public ResponseEntity<RegisterUserResponse> register(@RequestBody RegisterUserRequest registerUserRequest){
-//        RegisterUserResponse response = userService.register(registerUserRequest);
-//        return ResponseEntity.status(HttpStatus.OK).body(response);
-//    }
-//
-//    @GetMapping("/{userName}")
-//    public ResponseEntity <TodoUser> findByUserName(@PathVariable String userName){
-//        TodoUser userList = userService.findByUserName(userName);
-//        return ResponseEntity.status(HttpStatus.OK).body(userList);
-//    }
-//
-//    @DeleteMapping("/todoUser")
-//    public ResponseEntity <Void> deleteAll(){
-//        userService.deleteAll();
-//        return ResponseEntity.noContent().build();
-//    }
-//
-//    @PostMapping("/login")
-//    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest){
-//        LoginResponse loginResponse = userService.login(loginRequest);
-//        return ResponseEntity.status(HttpStatus.OK).body(loginResponse);
-//    }
-//
 
 
 

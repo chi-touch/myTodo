@@ -33,6 +33,7 @@ public class TodoUserServiceImpl implements TodoUserService {
     @Override
     public RegisterUserResponse register(RegisterUserRequest registerUserRequest) {
         validate(registerUserRequest.getUsername());
+
         TodoUser todoUser = map(registerUserRequest);
         TodoUser savedUser = todoUserRepository.save(todoUser);
         RegisterUserResponse userResponse = new RegisterUserResponse();
@@ -82,8 +83,10 @@ public class TodoUserServiceImpl implements TodoUserService {
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
         TodoUser foundUser = todoUserRepository.findByUsername(loginRequest.getUsername());
+        if (foundUser == null) throw new IllegalStateException("User " + username + "not found");
 
-        if (isValidUsernameAndPassword(username, password)) {
+//        isValidUsernameAndPassword(username, password)
+        if (foundUser.getPassword().equals(password)) {
             foundUser.setLocked(false);
             todoUserRepository.save(foundUser);
             LoginResponse response = new LoginResponse();
@@ -114,29 +117,29 @@ public class TodoUserServiceImpl implements TodoUserService {
 
     }
 
-    @Override
-    public CompleteTaskResponse completeTask(CreateTaskRequest createTaskRequest) {
-        TodoTask todo = Mapper.mapper(createTaskRequest);
-        TodoTask savedTodo = todoRepository.save(todo);
+//    @Override
+//    public CompleteTaskResponse completeTask(CreateTaskRequest createTaskRequest) {
+//        TodoTask todo = Mapper.mapper(createTaskRequest);
+//        TodoTask savedTodo = todoRepository.save(todo);
+//
+//        CompleteTaskResponse response = new CompleteTaskResponse();
+//        response.setAuthor(savedTodo.getAuthor());
+//        response.setMessage("Task completed successful");
+//        return response;
+//    }
 
-        CompleteTaskResponse response = new CompleteTaskResponse();
-        response.setAuthor(savedTodo.getAuthor());
-        response.setMessage("Task completed successful");
-        return response;
-    }
 
 
-
-    @Override
-    public IncompleteTaskResponse incompleteTask(CreateTaskRequest createTaskRequest) {
-        TodoTask todo = Mapper.mapper(createTaskRequest);
-        TodoTask savedTodo = todoRepository.save(todo);
-
-        IncompleteTaskResponse response = new IncompleteTaskResponse();
-        response.setAuthor(savedTodo.getAuthor());
-        response.setMessage("incomplete task created");
-        return response;
-    }
+//    @Override
+//    public IncompleteTaskResponse incompleteTask(CreateTaskRequest createTaskRequest) {
+//        TodoTask todo = Mapper.mapper(createTaskRequest);
+//        TodoTask savedTodo = todoRepository.save(todo);
+//
+//        IncompleteTaskResponse response = new IncompleteTaskResponse();
+//        response.setAuthor(savedTodo.getAuthor());
+//        response.setMessage("incomplete task created");
+//        return response;
+//    }
 
     @Override
     public UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest) {
@@ -175,7 +178,7 @@ public class TodoUserServiceImpl implements TodoUserService {
     }
 
 
-    private boolean ifTitleExistAlready(String title){return todoRepository.findByAuthor(title) != null; }
+    private boolean ifTitleExistAlready(String author){return todoRepository.findByAuthor(author) != null; }
 
 
     private boolean isValidUsernameAndPassword(String username, String password) {

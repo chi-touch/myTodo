@@ -20,6 +20,7 @@ public class UpdateTaskRequest {
     private String localDate = createdAt();
     private TaskPriority priority;
     private Status status;
+    private boolean isCompleted = false;
 
     private String createdAt() {
         LocalDateTime datedTime = LocalDateTime.now();

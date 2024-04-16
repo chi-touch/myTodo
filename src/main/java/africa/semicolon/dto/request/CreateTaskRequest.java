@@ -21,7 +21,7 @@ public class CreateTaskRequest {
     List<Tasks> taskList = new ArrayList<>();
     private String localDate = createdAt();
     private TaskPriority priority;
-    private Status status;
+   // private Status status;
 
     private String createdAt() {
         LocalDateTime datedTime = LocalDateTime.now();

@@ -24,8 +24,12 @@ public interface TodoTaskService {
      List<TodoTask> findCompletedTasks();
      List<TodoTask> findInCompletedTasks();
      CompleteTaskResponse completeTask(CreateTaskRequest createTaskRequest);
-     IncompleteTaskResponse incompleteTask(CreateTaskRequest incompleteTaskRequest);
+//     IncompleteTaskResponse incompleteTask(CreateTaskRequest incompleteTaskRequest);
 
 
     long getNumberOfUpdatedTasks();
+
+    long getNumberOfCompletedTasks();
+
+    long getNumberOfIncompleteTasks();
 }

@@ -20,6 +20,9 @@ public class TodoUser {
     private boolean isLocked;
     private TaskPriority priority;
     private Status status;
+
+    private boolean isCompleted;
+
     private LocalDateTime dateRegistered = LocalDateTime.now();
     @DBRef
     private List<Tasks> tasks = new ArrayList<>();

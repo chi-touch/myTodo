@@ -1,5 +1,6 @@
 package africa.semicolon.service;
 
+import africa.semicolon.data.model.Status;
 import africa.semicolon.data.model.TodoTask;
 import africa.semicolon.data.repository.TodoRepository;
 import africa.semicolon.dto.request.CreateTaskRequest;
@@ -10,6 +11,7 @@ import africa.semicolon.dto.response.IncompleteTaskResponse;
 import africa.semicolon.dto.response.UpdateTaskResponse;
 import africa.semicolon.exceptions.AuthorDoesNotExist;
 import africa.semicolon.exceptions.InvalidTitleException;
+import africa.semicolon.exceptions.TaskIsIncompleteException;
 import africa.semicolon.exceptions.TitleAlreadyExistException;
 import africa.semicolon.util.Mapper;
 import lombok.AllArgsConstructor;
@@ -81,9 +83,9 @@ public class TodoServiceImpl implements TodoTaskService{
     @Override
     public UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest) {
 
-        if (ifTitleAlreadyExist(updateTaskRequest.getTitle())){
-            throw new TitleAlreadyExistException("this title already exist");
-        }
+//        if (ifTitleAlreadyExist(updateTaskRequest.getTitle())){
+//            throw new TitleAlreadyExistException("this title already exist");
+//        }
         TodoTask todoTask = Mapper.updateMapper(updateTaskRequest);
         TodoTask savedTodo = todoRepository.save(todoTask);
 
@@ -95,19 +97,21 @@ public class TodoServiceImpl implements TodoTaskService{
 
     @Override
     public List<TodoTask> findCompletedTasks() {
-        return todoRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == INCOMPLETE).collect(Collectors.toList());
+        return todoRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == COMPLETE).collect(Collectors.toList());
        // return todoRepository.findByStatus(Status.COMPLETE);
     }
 
     @Override
     public List<TodoTask> findInCompletedTasks() {
-        return todoRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == INCOMPLETE).collect(Collectors.toList());
+        return todoRepository.findByStatus(Status.INCOMPLETE);
+        //return todoRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == INCOMPLETE).collect(Collectors.toList());
     }
 
-    //return todoRepository.findByStatus(Status.INCOMPLETE);
+
 
     @Override
     public CompleteTaskResponse completeTask(CreateTaskRequest createTaskRequest) {
+        if (createTaskRequest.getAuthor() != null);
         TodoTask todo = Mapper.mapper(createTaskRequest);
         TodoTask savedTodo = todoRepository.save(todo);
 
@@ -122,20 +126,33 @@ public class TodoServiceImpl implements TodoTaskService{
         return todoRepository.findByAuthor(createTaskRequest.getAuthor()) != null;
     }
 
-    @Override
-    public IncompleteTaskResponse incompleteTask(CreateTaskRequest createTaskRequest) {
-        TodoTask todo = Mapper.mapper(createTaskRequest);
-        TodoTask savedTodo = todoRepository.save(todo);
-
-        IncompleteTaskResponse incompleteTaskResponse = new IncompleteTaskResponse();
-        incompleteTaskResponse.setMessage("this task is incomplete");
-        incompleteTaskResponse.setStatus(INCOMPLETE);
-        incompleteTaskResponse.setAuthor(savedTodo.getAuthor());
-        return incompleteTaskResponse;
-    }
+//    @Override
+//    public IncompleteTaskResponse incompleteTask(CreateTaskRequest createTaskRequest) {
+//        if (createTaskRequest.getAuthor() == null){
+//            throw new TaskIsIncompleteException("this task is incomplete");
+//        }
+//        TodoTask todo = Mapper.mapper(createTaskRequest);
+//        TodoTask savedTodo = todoRepository.save(todo);
+//
+//        IncompleteTaskResponse incompleteTaskResponse = new IncompleteTaskResponse();
+//        incompleteTaskResponse.setMessage("this task is incomplete");
+//        incompleteTaskResponse.setStatus(INCOMPLETE);
+//        incompleteTaskResponse.setAuthor(savedTodo.getAuthor());
+//        return incompleteTaskResponse;
+//    }
 
     @Override
     public long getNumberOfUpdatedTasks() {
+        return todoRepository.count();
+    }
+
+    @Override
+    public long getNumberOfCompletedTasks() {
+        return todoRepository.count();
+    }
+
+    @Override
+    public long getNumberOfIncompleteTasks() {
         return todoRepository.count();
     }
 

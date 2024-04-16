@@ -18,7 +18,8 @@ public class Mapper {
         todo.setAuthor(createTaskRequest.getAuthor());
         todo.setLocalDate(createTaskRequest.getLocalDate());
         todo.setPriority(createTaskRequest.getPriority());
-        todo.setStatus(createTaskRequest.getStatus());
+       // todo.setStatus(createTaskRequest.getStatus());
+//        todo.setCompleted(false);
         return todo;
     }
 
@@ -47,6 +48,7 @@ public class Mapper {
         todoTask.setLocalDate(updateTaskRequest.getLocalDate());
         todoTask.setPriority(updateTaskRequest.getPriority());
         todoTask.setStatus(updateTaskRequest.getStatus());
+        todoTask.setCompleted(false);
         return todoTask;
     }
 //    public static TodoTask completeMapper(CreateTaskRequest createTaskRequest){
