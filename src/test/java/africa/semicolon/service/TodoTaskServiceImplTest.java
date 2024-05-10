@@ -3,7 +3,7 @@ package africa.semicolon.service;
 
 import africa.semicolon.data.model.TaskPriority;
 import africa.semicolon.data.model.Tasks;
-import africa.semicolon.data.model.TodoTask;
+import africa.semicolon.data.model.TodoTaskList;
 import africa.semicolon.dto.request.CreateTaskRequest;
 import africa.semicolon.dto.request.UpdateTaskRequest;
 
@@ -19,7 +19,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static africa.semicolon.data.model.Status.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -34,7 +33,7 @@ public class TodoTaskServiceImplTest {
 
 
     @Autowired
-    TodoTaskService todoService;
+    TodoTaskListService todoService;
 
     @BeforeEach
     public void setUp(){
@@ -49,10 +48,11 @@ public class TodoTaskServiceImplTest {
         List<Tasks> taskList = new ArrayList<>();
         createTaskRequest.setTaskList(taskList);
         createTaskRequest.setLocalDate(String.valueOf(LocalDate.now()));
-        createTaskRequest.setPriority(TaskPriority.IMPORTANT);
+        createTaskRequest.setPriority(TaskPriority.PENDING);
        // createTaskRequest.setStatus(COMPLETE);
 
-        CreateTaskResponse createTaskResponse =  todoService.createTask(createTaskRequest);
+        CreateTaskResponse createTaskResponse = todoService.createList(createTaskRequest);
+
 
 
         assertThat(createTaskResponse.getMessage()).isNotNull();
@@ -87,7 +87,7 @@ public class TodoTaskServiceImplTest {
         createTaskRequest.setLocalDate(String.valueOf(LocalDate.now()));
         var response = todoService.createTask(createTaskRequest);
 
-        TodoTask actual =todoService.findByAuthor(createTaskRequest.getAuthor());
+        TodoTaskList actual =todoService.findByAuthor(createTaskRequest.getAuthor());
         assertEquals(response.getAuthor(),actual.getAuthor());
     }
     @Test
@@ -126,7 +126,7 @@ public class TodoTaskServiceImplTest {
         Tasks task1 = new Tasks();
         taskList.add(task);
         taskList.add(task1);
-        updateTaskRequest.setTaskList(taskList);
+        //updateTaskRequest.setTaskList(taskList);
 
 
         UpdateTaskResponse updateTaskResponse =todoService.update(updateTaskRequest);
@@ -147,13 +147,13 @@ public class TodoTaskServiceImplTest {
         UpdateTaskRequest updateTaskRequest = new UpdateTaskRequest();
         updateTaskRequest.setBody("journey so far");
         updateTaskRequest.setAuthor("neddy");
-        List<Tasks> taskList = new ArrayList<>();
-        Tasks task = new Tasks();
-        Tasks task1 = new Tasks();
-        taskList.add(task);
-        taskList.add(task1);
-        updateTaskRequest.setTaskList(taskList);
-        updateTaskRequest.setStatus(COMPLETE);
+//        List<Tasks> taskList = new ArrayList<>();
+//        Tasks task = new Tasks();
+//        Tasks task1 = new Tasks();
+//        taskList.add(task);
+//        taskList.add(task1);
+       // updateTaskRequest.setTaskList(taskList);
+        //updateTaskRequest.setStatus(COMPLETE);
         UpdateTaskResponse updateTaskResponse =todoService.update(updateTaskRequest);
 
         assertThat(todoService.findCompletedTasks().size(),is(1));
@@ -183,25 +183,9 @@ public class TodoTaskServiceImplTest {
         createTaskRequest.setTitle("how my day went");
         createTaskRequest.setPriority(TaskPriority.LESS_IMPORTANT);
         todoService.createTask(createTaskRequest);
-        List<TodoTask> tasks = todoService.findInCompletedTasks();
+        List<TodoTaskList> tasks = todoService.findInCompletedTasks();
         assertEquals(1, tasks.size());
     }
-
-//    @Test
-//    public void testForIncompleteTask(){
-//        CreateTaskRequest createTaskRequest = new CreateTaskRequest();
-//        createTaskRequest.setBody("today's job");
-//        createTaskRequest.setTitle("how my day went");
-//       // createTaskRequest.setAuthor("neddy");
-//        createTaskRequest.setPriority(TaskPriority.LESS_IMPORTANT);
-//
-//        assertEquals(1, todoService.findInCompletedTasks());
-//
-//
-//
-//       // assertEquals(0, todoService.incompleteTask(createTaskRequest));
-//        //assertThat(todoService.getNumberOfIncompleteTasks(),is(0L));
-//    }
 
 
 

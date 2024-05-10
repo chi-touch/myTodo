@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0172465-7c53-4c49-8648-35fd6bedb13e" name="Changes" comment="to do touch of todoServiceq">
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/exceptions/TaskIsIncompleteException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-08T200855.400.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-04-08T200933.400.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/TodoUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/TodoUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/model/TodoTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/model/TodoTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/model/TodoUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/model/TodoUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/request/CreateTaskRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/request/CreateTaskRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/request/UpdateTaskRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/request/UpdateTaskRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/service/TodoUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/util/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/util/Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/africa/semicolon/service/TodoTaskServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/africa/semicolon/service/TodoTaskServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/africa/semicolon/service/TodoUserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/africa/semicolon/service/TodoUserServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="e0172465-7c53-4c49-8648-35fd6bedb13e" name="Changes" comment="to do touch of todoServicer" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +127,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -156,6 +136,8 @@
       <recent name="africa.semicolon.exceptions" />
       <recent name="africa.semicolon.dto.request" />
       <recent name="africa.semicolon.dto.response" />
+      <recent name="africa.semicolon.util" />
+      <recent name="africa.semicolon.service" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -164,22 +146,18 @@
       <recent name="africa.semicolon.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
-    <configuration name="generated-requests | #118" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="118" requestIdentifier="#118" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="TodoTaskServiceImplTest.testToCreateTask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TodoTaskServiceImplTest">
+    <configuration name="TodoTaskServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myTodo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="africa.semicolon.service.*" />
+          <option name="PATTERN" value="africa.semicolon.dto.request.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="africa.semicolon.service" />
       <option name="MAIN_CLASS_NAME" value="africa.semicolon.service.TodoTaskServiceImplTest" />
-      <option name="METHOD_NAME" value="testToCreateTask" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,7 +166,7 @@
       <module name="myTodo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="africa.semicolon.service.*" />
+          <option name="PATTERN" value="africa.semicolon.dto.request.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -203,13 +181,29 @@
       <module name="myTodo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="africa.semicolon.service.*" />
+          <option name="PATTERN" value="africa.semicolon.dto.request.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="africa.semicolon.service" />
       <option name="MAIN_CLASS_NAME" value="africa.semicolon.service.TodoUserServiceImplTest" />
       <option name="METHOD_NAME" value="testCreatTodoTask" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoUserServiceImplTest.testToUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myTodo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="africa.semicolon.dto.request.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="africa.semicolon.service" />
+      <option name="MAIN_CLASS_NAME" value="africa.semicolon.service.TodoUserServiceImplTest" />
+      <option name="METHOD_NAME" value="testToUpdate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -230,13 +224,21 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Main" />
-        <item itemvalue="HTTP Request.generated-requests | #118" />
-        <item itemvalue="JUnit.TodoTaskServiceImplTest.testToCreateTask" />
-        <item itemvalue="JUnit.TodoUserServiceImplTest" />
+        <item itemvalue="JUnit.TodoTaskServiceImplTest" />
         <item itemvalue="JUnit.TodoUserServiceImplTest.testCreatTodoTask" />
+        <item itemvalue="JUnit.TodoUserServiceImplTest" />
+        <item itemvalue="JUnit.TodoUserServiceImplTest.testToUpdate" />
+        <item itemvalue="Spring Boot.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-c0c073db" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -263,7 +265,16 @@
       <workItem from="1713200769591" duration="11236000" />
       <workItem from="1713267338584" duration="1891000" />
       <workItem from="1713269919726" duration="5033000" />
-      <workItem from="1713285781946" duration="504000" />
+      <workItem from="1713285781946" duration="2840000" />
+      <workItem from="1713301575968" duration="8623000" />
+      <workItem from="1713514265379" duration="731000" />
+      <workItem from="1713770308178" duration="692000" />
+      <workItem from="1714746969246" duration="668000" />
+      <workItem from="1714751085403" duration="578000" />
+      <workItem from="1714816303860" duration="596000" />
+      <workItem from="1715160085490" duration="4458000" />
+      <workItem from="1715254348205" duration="22914000" />
+      <workItem from="1715329645813" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="to do">
       <option name="closed" value="true" />
@@ -329,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713055242419</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="to do touch of todoServicer">
+      <option name="closed" value="true" />
+      <created>1713291320907</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713291320907</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +362,7 @@
     <MESSAGE value="to do touchur" />
     <MESSAGE value="to do touch of todoService" />
     <MESSAGE value="to do touch of todoServiceq" />
-    <option name="LAST_COMMIT_MESSAGE" value="to do touch of todoServiceq" />
+    <MESSAGE value="to do touch of todoServicer" />
+    <option name="LAST_COMMIT_MESSAGE" value="to do touch of todoServicer" />
   </component>
 </project>

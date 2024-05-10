@@ -2,7 +2,6 @@ package africa.semicolon.data.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -18,13 +17,12 @@ public class TodoUser {
     private String password;
     private String username;
     private boolean isLocked;
-    private TaskPriority priority;
-    private Status status;
-
-    private boolean isCompleted;
-
     private LocalDateTime dateRegistered = LocalDateTime.now();
-    @DBRef
-    private List<Tasks> tasks = new ArrayList<>();
+
+    private List<TodoTaskList> tasks = new ArrayList<>();
+
+
+
+
 
 }

@@ -1,33 +1,53 @@
 package africa.semicolon.service;
 
-import africa.semicolon.data.model.TodoTask;
-import africa.semicolon.data.model.TodoUser;
+import africa.semicolon.data.model.TodoTaskList;
 import africa.semicolon.dto.request.*;
 import africa.semicolon.dto.response.*;
 
 import java.util.List;
 
 public interface TodoUserService {
-    RegisterUserResponse register(RegisterUserRequest registerUserRequest);
 
-   TodoUser findByUserName(String username);
+    RegisterUserResponse register(RegisterUserRequest registerRequest);
 
-    long count();
-
-    void deleteAll();
     LoginResponse login(LoginRequest loginRequest);
 
+    TodoListResponse createTodolist(TodoTaskListRequest todolistRequest);
 
-    long getNumberOfUser();
+    EditTodolistUserResponse editTodoListWith(EditTodolistRequest editTodolistRequest);
 
-    CreateTaskResponse createTask(CreateTaskRequest createTaskRequest);
-    UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest);
-    List<TodoTask> findCompletedTasks();
-    List<TodoTask> findInCompletedTasks();
+    DeleteTodoListResponse deleteTodoTaskWith(DeleteListRequest deleteTodolistRequest);
 
-    void deleteTask(String title);
+    List<TodoListResponse> viewAllTodoList(TodoTaskListRequest todolistRequest);
 
+    MarkTaskResponse markTaskStatus(MarkTaskRequest markTaskRequest);
 
-    long getNumberOfTasks();
+    LogoutUserResponse logout(LogoutRequest logoutRequest);
+
+    StartTaskResponse startTask(StartTaskRequest startTaskRequest);
+
+    List<TodoTaskList> viewAllPendingTasks(ViewAllPendingTaskRequest viewAllPendingTaskRequest);
+
+    AssignTaskResponse assignTask(AssignTaskRequest assignTaskRequest);
+//    RegisterUserResponse register(RegisterUserRequest registerUserRequest);
+//
+//   TodoUser findByUserName(String username);
+//
+//    long count();
+//
+//    void deleteAll();
+//    LoginResponse login(LoginRequest loginRequest);
+//
+//
+//    long getNumberOfUser();
+//
+//    CreateTaskResponse createTask(CreateTaskRequest createTaskRequest);
+//    UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest);
+//
+//
+//    void deleteTask(String title);
+//
+//
+//    long getNumberOfTasks();
 
 }
