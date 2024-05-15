@@ -7,26 +7,27 @@ import africa.semicolon.data.repository.TodoUserRepository;
 import africa.semicolon.dto.request.*;
 import africa.semicolon.dto.response.*;
 import africa.semicolon.exceptions.*;
+import africa.semicolon.util.Mapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 import static africa.semicolon.util.Mapper.*;
 
 @Service
+
 public class TodoUserServiceImpl implements TodoUserService {
-
-
     @Autowired
-    private TodoTaskListService todoListService;
+    private  TodoTaskListService todoListService;
     @Autowired
-    private TodoTaskListRepository todoTaskListRepository;
-
+   private  TodoTaskListRepository todoTaskListRepository;
     @Autowired
     private TodoUserRepository todoUserRepository;
-    private TodoUser authenticatedUser;
+    private TodoUser authenticatedUser ;
 
 
     @Override
@@ -59,17 +60,14 @@ public class TodoUserServiceImpl implements TodoUserService {
     }
 
     @Override
-    public StartTaskResponse startTask(StartTaskRequest startTaskRequest) {
+    public TodoUser startTask(StartTaskRequest startTaskRequest) {
         validateAuthentication();
         String author = startTaskRequest.getAuthor();
         String title = startTaskRequest.getTitle();
         TodoUser foundUser = todoUserRepository.findByUsername(author);
         TodoTaskList newTask = todoListService.startTaskWith(startTaskRequest);
         TodoTaskList taskToStart = findTaskByTitle(foundUser, title);
-        taskToStart.setPriority(startTaskRequest.getTaskPriority());
-        todoUserRepository.save(foundUser);
-
-        return startTaskResponseMap(taskToStart);
+        return todoUserRepository.save(foundUser);
 
     }
 
@@ -119,17 +117,17 @@ public class TodoUserServiceImpl implements TodoUserService {
     }
 
 
-    @Override
-    public TodoListResponse createTodolist(TodoTaskListRequest todolistRequest) {
-        validateAuthentication();
-        TodoUser foundUser = todoUserRepository.findByUsername(todolistRequest.getUsername());
-        if (taskExistsForUser(foundUser, todolistRequest.getTitle()))
-            throw new TaskExistsException("Task already exists");
-        TodoTaskList newTodoList = todoListService.createList(todolistRequest);
-        foundUser.getTasks().add(newTodoList);
-        todoUserRepository.save(foundUser);
-        return mapCreateTodoListResponseWith(newTodoList);
-    }
+//    @Override
+//    public TodoListResponse createTodolist(TodoTaskListRequest todolistRequest) {
+//        validateAuthentication();
+//        TodoUser foundUser = todoUserRepository.findByUsername(todolistRequest.getUsername());
+//        if (taskExistsForUser(foundUser, todolistRequest.getTitle()))
+//            throw new TaskExistsException("Task already exists");
+//        TodoTaskList newTodoList = todoListService.createList(todolistRequest);
+//        foundUser.getTasks().add(newTodoList);
+//        todoUserRepository.save(foundUser);
+//        return mapCreateTodoListResponseWith(newTodoList);
+//    }
 
     private boolean taskExistsForUser(TodoUser foundUser, String title) {
         for (TodoTaskList todoList : foundUser.getTasks()) {
@@ -248,14 +246,14 @@ public class TodoUserServiceImpl implements TodoUserService {
 //    }
 //
 //
-//    @Override
-//    public TodoUser findByUserName(String username) {
-//        TodoUser user = todoUserRepository.findByUsername(username);
-//        if (user != null) {
-//            return user;
-//        }
-//        throw new InvalidUserNameException("this user name does not exist");
-//    }
+    @Override
+    public TodoUser findByUserName(String username) {
+        TodoUser user = todoUserRepository.findByUsername(username);
+        if (user != null) {
+            return user;
+        }
+        throw new InvalidUserNameException("this user name does not exist");
+    }
 //
 //
 //    private boolean ifUserExists(String username) {
@@ -263,16 +261,15 @@ public class TodoUserServiceImpl implements TodoUserService {
 //
 //    }
 //
-//    @Override
-//    public long count() {
-//        return todoUserRepository.count();
-//    }
+    @Override
+    public long count() {
+        return todoUserRepository.count();
+    }
 //
-//    @Override
-//    public void deleteAll() {
-//        todoUserRepository.deleteAll();
-//
-//    }
+    @Override
+    public void deleteAll() {
+        todoTaskListRepository.deleteAll();
+    }
 //
 //    @Override
 //    public LoginResponse login(LoginRequest loginRequest) {
@@ -292,31 +289,31 @@ public class TodoUserServiceImpl implements TodoUserService {
 //            throw new InvalidInputEnteredException("Invalid username or password");
 //        }
 //    }
-//
-//    @Override
-//    public long getNumberOfUser() {
-//        return todoUserRepository.count();
-//    }
-//
-//    @Override
-//    public CreateTaskResponse createTask(CreateTaskRequest createTaskRequest) {
-//        TodoUser user = todoUserRepository.findByUsername(createTaskRequest.getAuthor());
-//        CreateTaskResponse response = todoTaskService.createTask(createTaskRequest);
-//        TodoTaskList todoTask = todoTaskService.findById(response.getTaskId());
-//        List<TodoTaskList> userTasks = user.getTasks();
-//        userTasks.add(todoTask);
-//        user.setTasks(userTasks);
-//        todoUserRepository.save(user);
+
+    @Override
+    public long getNumberOfUser() {
+        return todoUserRepository.count();
+    }
+
+    @Override
+    public CreateTaskResponse createTask(CreateTaskRequest createTaskRequest) {
+        TodoUser user = todoUserRepository.findByUsername(createTaskRequest.getUsername());
+        CreateTaskResponse response = todoListService.createList(createTaskRequest);
+        TodoTaskList todoTask = todoListService.findById(response.getTaskId());
+        List<TodoTaskList> userTasks = user.getTasks();
+        userTasks.add(todoTask);
+        user.setTasks(userTasks);
+        todoUserRepository.save(user);
 //        if (ifTitleExistAlready(createTaskRequest.getTitle())){
 //            throw new TitleAlreadyExistException("this title already exist");
 //        }
-//
-//        CreateTaskResponse createTaskResponse = new CreateTaskResponse();
-//        createTaskResponse.setAuthor(user.getId());
-//        createTaskResponse.setMessage("created successful");
-//        return createTaskResponse;
-//
-//    }
+
+        CreateTaskResponse createTaskResponse = new CreateTaskResponse();
+        createTaskResponse.setAuthor(user.getId());
+        createTaskResponse.setMessage("created successful");
+        return createTaskResponse;
+
+    }
 //
 //
 //
@@ -343,37 +340,30 @@ public class TodoUserServiceImpl implements TodoUserService {
 ////        response.setMessage("incomplete task created");
 ////        return response;
 ////    }
-//
-//    @Override
-//    public UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest) {
-//        TodoTaskList todoTask = Mapper.updateMapper(updateTaskRequest);
-//        TodoTaskList savedTodo = todoUserRepository.save(todoTask);
-//
-//        UpdateTaskResponse updateTaskResponse = new UpdateTaskResponse();
-//        updateTaskResponse.setAuthor(savedTodo.getAuthor());
-//        updateTaskResponse.setMessage("updated successful");
-//        return updateTaskResponse;
-//    }
-//
-////    @Override
-////    public List<TodoTask> findCompletedTasks() {
-////        return todoUserRepository.findAll().stream().filter(todoTask -> todoTask.getStatus() == COMPLETED).collect(Collectors.toList());
-////    }
-//
-//
-//
-//    @Override
-//    public void deleteTask(String title) {
-//        todoRepository.deleteByTitle(title);
-//    }
-//
-//    @Override
-//    public long getNumberOfTasks() {
-//        return todoUserRepository.count();
-//    }
-//
-//
-//    private boolean ifTitleExistAlready(String author){return todoRepository.findByAuthor(author) != null; }
+
+    @Override
+    public UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest) {
+        TodoTaskList todoTask = Mapper.updateMapper(updateTaskRequest);
+        TodoTaskList savedTodo = todoTaskListRepository.save(todoTask);
+
+        UpdateTaskResponse updateTaskResponse = new UpdateTaskResponse();
+        updateTaskResponse.setAuthor(savedTodo.getAuthor());
+        updateTaskResponse.setMessage("updated successful");
+        return updateTaskResponse;
+    }
+
+    @Override
+    public void deleteTask(String title) {
+     todoTaskListRepository.deleteByTitle(title);
+    }
+
+    @Override
+    public long getNumberOfTasks() {
+        return todoUserRepository.count();
+    }
+
+
+  //  private boolean ifTitleExistAlready(String title){return todoUserRepository.findByTitle(title) != null;}
 //
 //
 //    private boolean isValidUsernameAndPassword(String username, String password) {
@@ -387,11 +377,7 @@ public class TodoUserServiceImpl implements TodoUserService {
 //    }
 //
 //
-//    private boolean validateUsernameAndPassword(String username, String password){
-//        return false;
-//    }
-//
-//
+
 
 
 }

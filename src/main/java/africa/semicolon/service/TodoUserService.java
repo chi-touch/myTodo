@@ -1,6 +1,7 @@
 package africa.semicolon.service;
 
 import africa.semicolon.data.model.TodoTaskList;
+import africa.semicolon.data.model.TodoUser;
 import africa.semicolon.dto.request.*;
 import africa.semicolon.dto.response.*;
 
@@ -12,7 +13,7 @@ public interface TodoUserService {
 
     LoginResponse login(LoginRequest loginRequest);
 
-    TodoListResponse createTodolist(TodoTaskListRequest todolistRequest);
+//    TodoListResponse createTodolist(TodoTaskListRequest todolistRequest);
 
     EditTodolistUserResponse editTodoListWith(EditTodolistRequest editTodolistRequest);
 
@@ -24,30 +25,29 @@ public interface TodoUserService {
 
     LogoutUserResponse logout(LogoutRequest logoutRequest);
 
-    StartTaskResponse startTask(StartTaskRequest startTaskRequest);
+    TodoUser startTask(StartTaskRequest startTaskRequest);
 
     List<TodoTaskList> viewAllPendingTasks(ViewAllPendingTaskRequest viewAllPendingTaskRequest);
 
     AssignTaskResponse assignTask(AssignTaskRequest assignTaskRequest);
 //    RegisterUserResponse register(RegisterUserRequest registerUserRequest);
 //
-//   TodoUser findByUserName(String username);
+   TodoUser findByUserName(String username);
 //
-//    long count();
+    long count();
 //
-//    void deleteAll();
+    void deleteAll();
 //    LoginResponse login(LoginRequest loginRequest);
 //
 //
-//    long getNumberOfUser();
-//
-//    CreateTaskResponse createTask(CreateTaskRequest createTaskRequest);
-//    UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest);
-//
-//
-//    void deleteTask(String title);
-//
-//
-//    long getNumberOfTasks();
+    long getNumberOfUser();
+
+    CreateTaskResponse createTask(CreateTaskRequest createTaskRequest);
+    UpdateTaskResponse update(UpdateTaskRequest updateTaskRequest);
+
+    void deleteTask(String title);
+
+
+    long getNumberOfTasks();
 
 }

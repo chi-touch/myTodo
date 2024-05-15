@@ -1,14 +1,9 @@
 package africa.semicolon.dto.request;
 
-import africa.semicolon.data.model.Status;
-import africa.semicolon.data.model.TaskPriority;
-import africa.semicolon.data.model.Tasks;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 public class UpdateTaskRequest {
