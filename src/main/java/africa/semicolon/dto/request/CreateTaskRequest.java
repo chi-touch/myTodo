@@ -1,10 +1,9 @@
 package africa.semicolon.dto.request;
 
-import africa.semicolon.data.model.Status;
-import africa.semicolon.data.model.TaskPriority;
+import africa.semicolon.data.model.MyStatus;
 import africa.semicolon.data.model.Tasks;
 
-import lombok.AllArgsConstructor;
+import africa.semicolon.data.model.TodoTaskList;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -18,11 +17,13 @@ public class CreateTaskRequest {
     private String title;
     private String body;
     private String author;
-    List<Tasks> taskList = new ArrayList<>();
-    private String localDate = createdAt();
-    private TaskPriority priority;
-   // private Status status;
+    private String username;
 
+
+    private MyStatus priority;
+
+    List<TodoTaskList> taskList = new ArrayList<>();
+    private String localDate = createdAt();
     private String createdAt() {
         LocalDateTime datedTime = LocalDateTime.now();
 

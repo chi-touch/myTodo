@@ -52,10 +52,10 @@ public class Mapper {
         return todoListResponse;
     }
 
-    public static TodoTaskList checkMap(CreateTaskRequest todoList) {
+    public static TodoTaskList checkMap(CreateTaskRequest createTaskRequest) {
         TodoTaskList todoList1 = new TodoTaskList();
-        todoList1.setTitle(todoList.getTitle());
-        todoList1.setPriority(todoList.getTaskPriority());
+        todoList1.setTitle(createTaskRequest.getTitle());
+        todoList1.setPriority(createTaskRequest.getPriority());
         return todoList1;
     }
 
@@ -170,17 +170,16 @@ public class Mapper {
 //        return response;
 //    }
 //
-//    public static TodoTaskList updateMapper(UpdateTaskRequest updateTaskRequest){
-//        TodoTaskList todoTask = new TodoTaskList();
-//        todoTask.setBody(updateTaskRequest.getBody());
-//        todoTask.setTitle(updateTaskRequest.getTitle());
-//        todoTask.setAuthor(updateTaskRequest.getAuthor());
-//        todoTask.setLocalDate(updateTaskRequest.getLocalDate());
-//       // todoTask.setPriority(updateTaskRequest.getPriority());
-//       // todoTask.setStatus(updateTaskRequest.getStatus());
-//        todoTask.setCompleted(false);
-//        return todoTask;
-//    }
+    public static TodoTaskList updateMapper(UpdateTaskRequest updateTaskRequest){
+        TodoTaskList todoTask = new TodoTaskList();
+        todoTask.setBody(updateTaskRequest.getBody());
+        todoTask.setTitle(updateTaskRequest.getTitle());
+        todoTask.setAuthor(updateTaskRequest.getAuthor());
+        todoTask.setLocalDate(updateTaskRequest.getLocalDate());
+       // todoTask.setPriority(updateTaskRequest.getPriority());
+       // todoTask.setStatus(updateTaskRequest.getStatus());
+        return todoTask;
+    }
 ////    public static TodoTask completeMapper(CreateTaskRequest createTaskRequest){
 ////        TodoTask todo = new TodoTask();
 ////        todo.setBody(createTaskRequest.getBody());
