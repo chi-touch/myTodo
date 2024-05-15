@@ -1,7 +1,7 @@
 package africa.semicolon.dto.request;
 
 import africa.semicolon.data.model.Status;
-import africa.semicolon.data.model.TaskPriority;
+import africa.semicolon.data.model.MyStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,9 +14,11 @@ public class TodoTaskRequest {
     private String author;
     private String title;
     private String body;
+    private String username;
     private String LocalDate = createAt();
-    private Status status;
-    private TaskPriority priority;
+    private MyStatus priority;
+
+
 
     private String createAt(){
         LocalDateTime dateTime = LocalDateTime.now();

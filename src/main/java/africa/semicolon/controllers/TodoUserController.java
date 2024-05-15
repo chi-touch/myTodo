@@ -7,10 +7,12 @@ import africa.semicolon.dto.request.UpdateTaskRequest;
 import africa.semicolon.dto.response.ApiResponse;
 import africa.semicolon.exceptions.*;
 import africa.semicolon.service.TodoUserService;
+import lombok.RequiredArgsConstructor;
 import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
@@ -19,9 +21,8 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RestController
 @RequestMapping("/api/v1")
 public class TodoUserController {
-
     @Autowired
-    TodoUserService userService;
+   private  TodoUserService userService;
 
 
     @PostMapping("/register")

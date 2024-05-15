@@ -10,4 +10,7 @@ import java.util.List;
 public interface TodoUserRepository extends MongoRepository<TodoUser, String> {
     TodoUser findByUsername(String username);
     boolean existsByUsername(String username);
+
+   // TodoUser findByTitle(String title);
+
 }
