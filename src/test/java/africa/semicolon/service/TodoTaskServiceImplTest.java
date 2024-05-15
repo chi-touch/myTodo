@@ -124,12 +124,12 @@ public class TodoTaskServiceImplTest {
         UpdateTaskRequest updateTaskRequest = new UpdateTaskRequest();
         updateTaskRequest.setBody("journey so far");
         updateTaskRequest.setAuthor("neddy");
-        List<Tasks> taskList = new ArrayList<>();
-        Tasks task = new Tasks();
-        Tasks task1 = new Tasks();
+        List<TodoTaskList> taskList = new ArrayList<>();
+        TodoTaskList task = new TodoTaskList();
+        TodoTaskList task1 = new TodoTaskList();
         taskList.add(task);
         taskList.add(task1);
-        //updateTaskRequest.setTaskList(taskList);
+        updateTaskRequest.setTodoTaskListList(taskList);
 
 
         //UpdateTaskResponse updateTaskResponse =todoService.update(updateTaskRequest);

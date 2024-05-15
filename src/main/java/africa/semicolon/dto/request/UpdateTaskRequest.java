@@ -1,9 +1,12 @@
 package africa.semicolon.dto.request;
 
+import africa.semicolon.data.model.TodoTaskList;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class UpdateTaskRequest {
@@ -12,6 +15,7 @@ public class UpdateTaskRequest {
     private String body;
     private String title;
     private  String localDate = finishDate();
+    private List<TodoTaskList> todoTaskListList = new ArrayList<>();
 
     private String finishDate(){
         LocalDateTime finished = LocalDateTime.now();
